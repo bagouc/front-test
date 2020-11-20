@@ -1,0 +1,15 @@
+<div *ngIf="!connected">
+  <div>Sign in</div>
+  <form>
+    <label for="mail">Mail</label>
+    <input type="text" class="form-control" required [(ngModel)]="modelTest.login" name="mail">
+
+    <label for="password">Password</label>
+    <input type="password" class="form-control" required [(ngModel)]="modelTest.password" name="password">
+    <button (click)="submit()">Sign in</button>
+    <button class="cancel" (click)="cancel()">Cancel</button>
+
+    <div *ngIf="error">Invalid credentials</div>
+  </form>
+</div>
+<div *ngIf="connected">Vous êtes connectés.</div>
